@@ -1,0 +1,65 @@
+<!--pages/my/order/order.wxml-->
+<wxs module="filters" src="../../../addmul/addmul.wxs"></wxs>
+
+
+<view class="navbar">
+     <block wx:for="{{navbar}}"> 
+     <text data-idx="{{index}}"  class="item {{currentTab==index ? 'active' : ''}}" wx:key="{{index}}" bindtap="navbarTap"> {{item.name}} </text>
+     </block>
+</view>
+
+<view class="content">
+   <view class="content-bg">
+    <view wx:if="{{hidden}}" class="tab-content1">
+        <image class="tab-image" src="../../../image/cart.png"/>
+        <text>您还没有相关订单</text>
+    </view>
+   </view>
+</view>
+
+
+  <view class="scroll" wx:if="{{!hidden}}">
+      <scroll-view class="scroll-content" scroll-y="true">
+         <block wx:for="{{navbar[currentTab].carts}}">
+         <view class="content">
+          <view class="row" >
+            <image class="item-img" src="../{{item.imgUrl}}"/> 
+            <text class="title">{{item.title}}</text>
+            <view class="column">
+
+
+
+            
+              <view class="right">
+               <text class="item-price">￥{{item.price}}</text>
+               <text>x{{item.count}}</text>
+              </view>
+            
+
+            
+               <view class="bottom">
+                 <text class="item-price">共{{item.count}}件商品 合计￥{{filters.toFix(item.price*item.count)}}</text>
+                  
+                  
+               </view>
+               
+            
+
+
+
+             </view>
+          </view>
+          <view class="button">
+                   <button >查看物流</button>
+                   <button >挑选服务</button>
+                   <button >确认收货</button>
+                  </view>
+         </view> 
+         
+         </block>
+     </scroll-view>
+
+  </view>
+
+
+

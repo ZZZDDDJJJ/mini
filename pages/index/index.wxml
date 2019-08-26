@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="container">
+ 
+  <!-- <view class="usermotto">
+    <text class="user-motto" bindtap="zzz">{{motto}}</text>
+  </view>
+  <template name="odd">
+  <view> odd </view>
+  </template>
+
+<block wx:for="{{[1, 2, 3, 4, 5]}}">
+  <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
+</block> -->
+<view class="wrapper">
+ <view class="search" bindtap="searchBox">
+   <image class="sou" src="../../image/search.png"></image>
+   <input type="text" placeholder="输入你想要的" confirm-type="search"  ></input>
+   
+ </view>
+</view>
+
+
+ <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+ </swiper>
+ <view class="nav">
+   <block wx:for="{{imgUrls1}}">
+    <navigator url="../sale/sale"  hover-class="none">
+      <view class="nav-container">
+      <image src="{{item.message}}" class="slide-image1"/>{{item.title}}
+      </view>
+    </navigator>
+   </block>
+ </view>
+
+
+<my-component/>
+<view class="p">
+<my-component/>
+</view>
+
+<view  class="content">
+  <view class="content-text">
+    <view class="tip">新书热卖榜</view>
+    <view class="more">查看更多 ></view>
+  </view>
+ <view  class="content-one">
+  <block  wx:for="{{book}}" wx:key="id">
+      <view wx:key="id" class="item {{item.id}}">
+      <image src="{{item.url}}"></image>
+      </view>
+  </block>
+ </view>
+</view>
+
+<view  class="content p">
+  <view class="content-text">
+    <view class="tip">即可秒杀</view>
+    <view class="more">查看更多 ></view>
+  </view>
+ <view  class="content-one">
+  <block  wx:for="{{book}}" wx:key="id">
+      <view wx:key="id" class="item {{item.id}}">
+      <image src="{{item.url}}"></image>
+      </view>
+  </block>
+ </view>
+</view>
+
+<view  class="content p1">
+  <view class="content-text">
+    <view class="tip">9.9包邮</view>
+    <view class="more">查看更多 ></view>
+  </view>
+ <view  class="content-one">
+  <block  wx:for="{{book}}" wx:key="id">
+      <view wx:key="id" class="item {{item.id}}">
+      <image src="{{item.url}}"></image>
+      </view>
+  </block>
+ </view>
+</view>
+
+
+
+</view>

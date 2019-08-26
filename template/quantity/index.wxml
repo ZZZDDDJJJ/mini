@@ -1,0 +1,11 @@
+<template name="quantity">
+ <view class="stepper">
+  <text class="{{count <= 1 ? 'disabled' : 'normal'}}" type="number" bindtap="delCount" data-index="{{index}}">-</text>
+
+   <input type="number" id="{{index}}"  bindchange="bindManual" value="{{count}}" data-index="{{index}}"></input>
+
+   <text class="{{count >= 999 ? 'disabled' : 'normal'}}" type="number" bindtap="addCount" data-index="{{index}}">+</text>
+ </view>
+
+
+</template>

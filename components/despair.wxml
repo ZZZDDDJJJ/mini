@@ -1,0 +1,18 @@
+<!--components/despair.wxml-->
+<despair>
+<view  class="content">
+  <view class="content-text">
+    <view class="tip">新书热卖榜</view>
+    <view class="more">查看更多 ></view>
+  </view>
+ <view  class="content-one">
+  <block  wx:for="{{book1}}" wx:key="id">
+    <navigator url="../detail/detail?goodsId={{item.id}}" hover-class="none">
+      <view wx:key="id" class="item {{item.id}}">
+      <image src="{{item.url}}"></image>
+      </view>
+    </navigator>
+  </block>
+ </view>
+</view>
+</despair>

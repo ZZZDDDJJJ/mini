@@ -1,0 +1,43 @@
+/* components/despair.wxss */
+.content{
+  background-color: #FFFAFA;
+  height: 400rpx;
+  border: 20rpx solid white;
+  border-radius: 10%;
+}
+
+.content.p{
+     background-color: #fff5ee;
+}
+.content.p1{
+     background-color: #fff8dc;
+}
+.content .content-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 20rpx 0 20rpx;
+}
+
+.content .content-text .tip{
+  margin: 0rpx 10rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+}
+
+.content .content-text .more{
+  margin: 0rpx 10rpx;
+  font-size: 20rpx;
+}
+
+.content-one{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 40rpx;
+}
+.content image{
+  width: 200rpx;
+  height: 200rpx;
+}

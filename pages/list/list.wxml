@@ -1,0 +1,43 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+
+  <view class="nav_left">
+    <block wx:for="{{Items}}">
+        <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}"  data-id="{{item.id}}">
+        {{item.desc}}
+        </view>
+    </block>
+  
+  </view>
+
+  <view class="nav_right">
+    <view wx:if="{{Items[curIndex].children}}" class="nav_right_container">
+       <block wx:for="{{Items[curIndex].children}}">
+          <view class="nav_right_items">
+            <navigator url="../detail/detail?goodsId={{item.child_id}}&typeid={{Items[curIndex].id}}"  hover-class="none">
+              <view>
+                <block wx:if="{[item.logo}}">
+                   <image src="{{item.logo}}"></image>
+                </block>
+                <block wx:else>
+                    <image src="http://temp.im/50*30"></image>
+                </block>
+              </view>
+
+              <view wx:if="{{item.desc}}">
+                <text>{{item.desc}}</text>
+              
+              </view>
+              <view wx:else>
+                <text> {{item.desc2}}</text>
+              </view>
+            
+            
+            </navigator>
+          </view>
+       </block>
+    </view>
+   <view wx:else>暂无数据</view>
+  </view>
+
+</view>

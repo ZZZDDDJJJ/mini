@@ -1,0 +1,37 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+<view class="search">
+   <image class="sou" src="../../image/search.png"></image>
+   <input type="text" placeholder="输入你想要的" confirm-type="search" value="{{inputValue}}" bindinput="inputBind" bindconfirm="confirm"></input>
+</view>
+<navigator open-type="navigateBack">取消</navigator>
+</view>
+
+<view class="hop-research">
+ <view class="title_one">热搜</view>
+ <view>
+  <button class="item">世界</button>
+  <button class="item">手机</button>
+  <button class="item">圣诞节</button>
+  <button class="item">神盾局</button>
+  <button class="item">品牌</button>
+  <button class="item">阿萨德</button>
+  <button class="item">水电局</button>
+    
+ </view>
+</view>
+
+<view class="hop-research">
+   <view class="flex flex-space f">
+    <view>历史记录</view>
+      <view bindtap="deleteRecord"><icon class="iconfont icon-delete:before" style="font-size:50rpx"></icon>
+      </view>
+    </view>
+
+    <view style="margin-top:15rpx;">
+     <view bindtap="goResearch" wx:for="{{recordList}}" id="{{item.keyword}}" class="go">{{item.keyword}}
+     </view>
+    
+    </view>
+
+</view>

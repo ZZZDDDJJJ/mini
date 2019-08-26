@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-component": "/components/despair"
+  },
+  "enablePullDownRefresh": true   
+}
